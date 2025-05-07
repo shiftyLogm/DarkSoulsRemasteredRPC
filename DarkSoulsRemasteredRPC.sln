@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSoulsRemasteredRPC", "DarkSoulsRemasteredRPC\DarkSoulsRemasteredRPC.csproj", "{6C4858E3-7680-4612-A336-863529B7F51D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C4858E3-7680-4612-A336-863529B7F51D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C4858E3-7680-4612-A336-863529B7F51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C4858E3-7680-4612-A336-863529B7F51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4858E3-7680-4612-A336-863529B7F51D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7189A595-D199-4F8E-9C32-362194B0E507}
+	EndGlobalSection
+EndGlobal
