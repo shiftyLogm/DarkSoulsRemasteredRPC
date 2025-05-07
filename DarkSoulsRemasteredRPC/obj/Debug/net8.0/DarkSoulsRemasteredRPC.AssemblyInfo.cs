@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DarkSoulsRemasteredRPC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5208251ac74ff7d1a5f0c2d229710d85e5514366")]
 [assembly: System.Reflection.AssemblyProductAttribute("DarkSoulsRemasteredRPC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DarkSoulsRemasteredRPC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="DiscordRichPresence" Version="1.2.1.24" />
+    <PackageReference Include="Process.NET" Version="1.0.8" />
+  </ItemGroup>
+
 </Project>
