@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace DarkSoulsRemasteredRPC.Enums
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum AreaId
+    public enum Area
     {
         [EnumMember(Value = "Depths")]
         Depths = 1000,

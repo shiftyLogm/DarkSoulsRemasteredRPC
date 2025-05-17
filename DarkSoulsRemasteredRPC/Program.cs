@@ -1,48 +1,62 @@
-﻿using DarkSoulsRemasteredRPC.Manager;
+﻿using DarkSoulsRemasteredRPC.Enums;
+using DarkSoulsRemasteredRPC.Managers;
+using DarkSoulsRemasteredRPC.Structs;
+using DarkSoulsRemasteredRPC.Utils;
 using DiscordRPC;
 
 namespace DarkSoulsRichPresence
 {
-    internal class Program
+    public class Program
     {
-        private static readonly DiscordRpcClient client = new DiscordRpcClient("1369323019628974130");
-        private static readonly DarkSoulsManager game = new DarkSoulsManager();
+        private static readonly DiscordRpcClient _client = new DiscordRpcClient("1372757659811319870");
+        private static readonly DiscordManager _discordClient = new DiscordManager();
+        private static readonly DarkSoulsManager _game = new DarkSoulsManager();
 
         private static void Main(string[] args)
         {
             InitRPC();
-            UpdateRPC();
+
+            Thread updateThread = new Thread(UpdatePresenceLoop);
+            updateThread.IsBackground = true;
+            updateThread.Start();
 
             for (; ; ) { }
         }
 
-        public static void InitRPC()
+        private static void InitRPC()
         {
-            client.Initialize();
+            _client.Initialize();
+            _client.Invoke();
         }
 
-        public static void UpdateRPC()
+        private static void UpdatePresenceLoop()
+        {
+            while (true)
+            {
+                string currentArea = _game.GetAreaName();
+                string currentCovenant = _game.GetCurrentCovenantName();
+                string currentCovenantImage = _game.GetCovenantImage();
+                int currentSouls = _game.GetCurrentSouls();
+                UpdateRPC(new GamePresence(currentArea, currentCovenant, currentCovenantImage, currentSouls));
+                Thread.Sleep(2000);
+            }
+
+        }
+
+        private static void UpdateRPC(GamePresence gamePresence)
         {
             var presence = new RichPresence()
             {
-                State = $"Exploring {game.GetAreaName()}",
-                Details = "Example Details",
+                State = $"{gamePresence.SoulsQuantity} Souls",
+                Details = $"Exploring {gamePresence.AreaName}",
                 Assets = new Assets()
                 {
-                    LargeImageKey = "Example",
-                    LargeImageText = "Example Image Text"
+                    LargeImageKey = gamePresence.CovenantImage,
+                    LargeImageText = $"This user has entered a covenant with the {gamePresence.Covenant}"
                 },
-                Buttons = new Button[]
-                {
-                    new Button()
-                    {
-                        Label = "Example Button",
-                        Url = "https://www.google.com/"
-                    }
-                }
             };
 
-            client.SetPresence(presence);
+            _client.SetPresence(presence);
         }
 
     }

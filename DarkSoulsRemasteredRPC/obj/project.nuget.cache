@@ -1,16 +1,30 @@
 {
   "version": 2,
-  "dgSpecHash": "WWPzGHDU65A=",
+  "dgSpecHash": "LUvErSo903o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pc\\Downloads\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj",
+  "projectFilePath": "C:\\Users\\Pc\\Documents\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Pc\\.nuget\\packages\\discord.net\\3.17.4\\discord.net.3.17.4.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\discord.net.commands\\3.17.4\\discord.net.commands.3.17.4.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\discord.net.core\\3.17.4\\discord.net.core.3.17.4.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\discord.net.interactions\\3.17.4\\discord.net.interactions.3.17.4.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\discord.net.rest\\3.17.4\\discord.net.rest.3.17.4.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\discord.net.webhook\\3.17.4\\discord.net.webhook.3.17.4.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\discord.net.websocket\\3.17.4\\discord.net.websocket.3.17.4.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\discordrichpresence\\1.2.1.24\\discordrichpresence.1.2.1.24.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
-    "C:\\Users\\Pc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\process.net\\1.0.8\\process.net.1.0.8.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\system.interactive.async\\6.0.1\\system.interactive.async.6.0.1.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\system.linq.async\\6.0.1\\system.linq.async.6.0.1.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
-    "C:\\Users\\Pc\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+    "C:\\Users\\Pc\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
   "logs": [
     {

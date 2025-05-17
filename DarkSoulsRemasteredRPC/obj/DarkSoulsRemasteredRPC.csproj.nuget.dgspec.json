@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pc\\Downloads\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj": {}
+    "C:\\Users\\Pc\\Documents\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pc\\Downloads\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj": {
+    "C:\\Users\\Pc\\Documents\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pc\\Downloads\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj",
+        "projectUniqueName": "C:\\Users\\Pc\\Documents\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj",
         "projectName": "DarkSoulsRemasteredRPC",
-        "projectPath": "C:\\Users\\Pc\\Downloads\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj",
+        "projectPath": "C:\\Users\\Pc\\Documents\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pc\\Downloads\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\obj\\",
+        "outputPath": "C:\\Users\\Pc\\Documents\\DarkSoulsRemasteredRPC\\DarkSoulsRemasteredRPC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Discord.Net": {
+              "target": "Package",
+              "version": "[3.17.4, )"
+            },
             "DiscordRichPresence": {
               "target": "Package",
               "version": "[1.2.1.24, )"
