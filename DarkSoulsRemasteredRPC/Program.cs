@@ -8,7 +8,7 @@ namespace DarkSoulsRichPresence
 {
     public class Program
     {
-        private static readonly DiscordRpcClient _client = new DiscordRpcClient("1372757659811319870");
+        private static readonly DiscordRpcClient _client = new DiscordRpcClient();
         private static readonly DiscordManager _discordClient = new DiscordManager();
         private static readonly DarkSoulsManager _game = new DarkSoulsManager();
 
@@ -60,4 +60,5 @@ namespace DarkSoulsRichPresence
         }
 
     }
+
 }
