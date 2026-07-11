@@ -1,5 +1,6 @@
 ﻿using DarkSoulsRemasteredRPC.Enums;
 using System;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
 
@@ -11,10 +12,28 @@ namespace DarkSoulsRemasteredRPC.Utils
         {
             var enumValue = (TEnum)(object)id;
             var memberInfo = typeof(TEnum).GetMember(enumValue.ToString()).FirstOrDefault();
-            var enumMemberAttr = memberInfo.GetCustomAttribute<EnumMemberAttribute>();
-            return enumMemberAttr.Value;
-        }
 
-        public static T GetEnumValueById<T>(int id) where T : Enum => (T)(object)id;
+            if (memberInfo is null)
+                return enumValue.ToString();
+
+            var enumMemberAttr = memberInfo.GetCustomAttribute<EnumMemberAttribute>();
+            return enumMemberAttr?.Value ?? enumValue.ToString();
+        }
+        
+        public static int GetEnumIdByMemberValue<TEnum>(string memberValue) where TEnum : Enum
+        {
+            var matchingField = typeof(TEnum)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .FirstOrDefault(field =>
+                {
+                    var attr = field.GetCustomAttribute<EnumMemberAttribute>();
+                    return attr != null && attr.Value == memberValue;
+                });
+
+            if (matchingField is null)
+                throw new ArgumentException();
+
+            return (int)matchingField.GetValue(null)!;
+        }
     }
 }

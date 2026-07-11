@@ -14,7 +14,7 @@ namespace DarkSoulsRemasteredRPC.Dictionaries
             { Covenant.PathOfTheDragon, "path-of-the-dragon-covenant" },
             { Covenant.GravelordServant, "gravelord-servant-covenant" },
             { Covenant.ForestHunter, "forest-hunter-covenant" },
-            { Covenant.BladeOfTheDarkMoon, "blade-of-darkmoon-covenant" },
+            { Covenant.DarkmoonBlade, "blade-of-darkmoon-covenant" },
             { Covenant.ChaosServant, "chaos-servant-covenant" },
         };
     }

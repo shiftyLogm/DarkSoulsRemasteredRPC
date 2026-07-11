@@ -6,34 +6,34 @@ namespace DarkSoulsRemasteredRPC.Enums
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Covenant
     {
-        [EnumMember(Value = "Null")]
-        Nenhum = 101122560,
+        [EnumMember(Value = "None")]
+        Nenhum = 0,
 
         [EnumMember(Value = "Way of White")]
-        WayOfWhite = 101122561,
+        WayOfWhite = 328193,
 
-        [EnumMember(Value = "Princess Guard")]
-        PrincessGuard = 101122562,
+        [EnumMember(Value = "Princess's Guard")]
+        PrincessGuard = 328194,
 
         [EnumMember(Value = "Warrior of Sunlight")]
-        WarriorOfSunlight = 101122563,
+        WarriorOfSunlight = 328195,
 
         [EnumMember(Value = "Darkwraith")]
-        Darkwraith = 101122564,
+        Darkwraith = 328196,
 
         [EnumMember(Value = "Path of the Dragon")]
-        PathOfTheDragon = 101122565,
+        PathOfTheDragon = 328197,
 
         [EnumMember(Value = "Gravelord Servant")]
-        GravelordServant = 101122566,
+        GravelordServant = 328198,
 
         [EnumMember(Value = "Forest Hunter")]
-        ForestHunter = 101122567,
+        ForestHunter = 328199,
 
-        [EnumMember(Value = "Blade of the Dark Moon")]
-        BladeOfTheDarkMoon = 101122568,
+        [EnumMember(Value = "Darkmoon Blade")]
+        DarkmoonBlade = 328200,
 
         [EnumMember(Value = "Chaos Servant")]
-        ChaosServant = 101122569,
+        ChaosServant = 328201,
     }
 }

@@ -26,22 +26,16 @@ namespace DarkSoulsRemasteredRPC.Managers
             nint address = new nint(addressTarget);
             return _process!.Memory.Read<int>(address);
         }
-
-        private int GetCurrentAreaId() => ReadProcess(0x1210C444); // Reading actual area value in memory
-
-        public string GetAreaName() => EnumUtilities.GetEnumMemberValueById<Area>(GetCurrentAreaId());
-
-        public int GetCurrentSouls() => ReadProcess(0x120D1EDC); // Reading actual souls value in memory
-
-        private int GetCurrentCovenantId() => ReadProcess(0x120E9723); // Reading actual covenant in memory
-
-        public string GetCurrentCovenantName() => EnumUtilities.GetEnumMemberValueById<Covenant>(GetCurrentCovenantId());
-
+        
+        public int GetCurrentSouls() => ReadProcess(0x0C5546A4); 
+        public string GetCurrentAreaName() => EnumUtilities.GetEnumMemberValueById<Area>(ReadProcess(0x27F70274));
+        public string GetCurrentCovenantName() => EnumUtilities.GetEnumMemberValueById<Covenant>(ReadProcess(0x0C554723));
+        
         // Reading covenant string indexed in Discord Application
         // This dictionary returns the name of the image to be displayed
         public string GetCovenantImage()
         {
-            Covenant covenant = EnumUtilities.GetEnumValueById<Covenant>(GetCurrentCovenantId());
+            Covenant covenant = (Covenant)EnumUtilities.GetEnumIdByMemberValue<Covenant>(GetCurrentCovenantName());;
             return CovenantImage.Covenants[covenant];
         }
     }
