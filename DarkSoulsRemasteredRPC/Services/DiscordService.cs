@@ -1,8 +1,8 @@
 ﻿using Discord.WebSocket;
 
-namespace DarkSoulsRemasteredRPC.Managers
+namespace DarkSoulsRemasteredRPC.Services
 {
-    public class DiscordManager
+    public class DiscordService
     {
         private DiscordSocketClient _client;
 

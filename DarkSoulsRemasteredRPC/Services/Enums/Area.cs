@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace DarkSoulsRemasteredRPC.Enums
+namespace DarkSoulsRemasteredRPC.Services.Enums
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Area

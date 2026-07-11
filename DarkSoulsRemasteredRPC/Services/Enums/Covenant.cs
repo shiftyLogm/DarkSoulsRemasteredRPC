@@ -1,39 +1,39 @@
 ﻿using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace DarkSoulsRemasteredRPC.Enums
+namespace DarkSoulsRemasteredRPC.Services.Enums
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Covenant
     {
         [EnumMember(Value = "None")]
-        Nenhum = 0,
+        None = 0,
 
         [EnumMember(Value = "Way of White")]
-        WayOfWhite = 328193,
+        WayOfWhite = 1,
 
         [EnumMember(Value = "Princess's Guard")]
-        PrincessGuard = 328194,
+        PrincessGuard = 2,
 
         [EnumMember(Value = "Warrior of Sunlight")]
-        WarriorOfSunlight = 328195,
+        WarriorOfSunlight = 3,
 
         [EnumMember(Value = "Darkwraith")]
-        Darkwraith = 328196,
+        Darkwraith = 4,
 
         [EnumMember(Value = "Path of the Dragon")]
-        PathOfTheDragon = 328197,
+        PathOfTheDragon = 5,
 
         [EnumMember(Value = "Gravelord Servant")]
-        GravelordServant = 328198,
+        GravelordServant = 6,
 
         [EnumMember(Value = "Forest Hunter")]
-        ForestHunter = 328199,
+        ForestHunter = 7,
 
         [EnumMember(Value = "Darkmoon Blade")]
-        DarkmoonBlade = 328200,
+        DarkmoonBlade = 8,
 
         [EnumMember(Value = "Chaos Servant")]
-        ChaosServant = 328201,
+        ChaosServant = 9,
     }
 }

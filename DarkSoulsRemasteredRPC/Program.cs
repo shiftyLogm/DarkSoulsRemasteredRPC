@@ -1,16 +1,14 @@
-﻿using DarkSoulsRemasteredRPC.Enums;
-using DarkSoulsRemasteredRPC.Managers;
-using DarkSoulsRemasteredRPC.Structs;
-using DarkSoulsRemasteredRPC.Utils;
+﻿using DarkSoulsRemasteredRPC.Services;
+using DarkSoulsRemasteredRPC.Models;
 using DiscordRPC;
 
-namespace DarkSoulsRichPresence
+namespace DarkSoulsRemasteredRPC
 {
     public class Program
     {
-        private static readonly DiscordRpcClient _client = new DiscordRpcClient();
-        private static readonly DiscordManager _discordClient = new DiscordManager();
-        private static readonly DarkSoulsManager _game = new DarkSoulsManager();
+        private static readonly DiscordRpcClient _client = new DiscordRpcClient("1372757659811319870");
+        private static readonly DiscordService _discordClient = new DiscordService();
+        private static readonly DarkSoulsProcessService _game = new DarkSoulsProcessService();
 
         private static void Main(string[] args)
         {
@@ -33,14 +31,13 @@ namespace DarkSoulsRichPresence
         {
             while (true)
             {
-                string currentArea = _game.GetAreaName();
-                string currentCovenant = _game.GetCurrentCovenantName();
                 string currentCovenantImage = _game.GetCovenantImage();
                 int currentSouls = _game.GetCurrentSouls();
+                string currentArea = _game.GetCurrentAreaName();
+                string currentCovenant = _game.GetCurrentCovenantName();
                 UpdateRPC(new GamePresence(currentArea, currentCovenant, currentCovenantImage, currentSouls));
                 Thread.Sleep(2000);
             }
-
         }
 
         private static void UpdateRPC(GamePresence gamePresence)
