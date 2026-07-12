@@ -2,60 +2,55 @@
 using DarkSoulsRemasteredRPC.Models;
 using DiscordRPC;
 
-namespace DarkSoulsRemasteredRPC
+const string DISCORD_APP_ID = "1372757659811319870";
+
+using DiscordRpcClient client = new DiscordRpcClient(DISCORD_APP_ID);
+
+DarkSoulsService game = new DarkSoulsService();
+
+client.Initialize();
+
+await UpdatePresenceLoop();
+
+async Task UpdatePresenceLoop()
 {
-    public class Program
+    GamePresence? lastPresence = null;
+
+    while (true)
     {
-        private static readonly DiscordRpcClient _client = new DiscordRpcClient("1372757659811319870");
-        private static readonly DiscordService _discordClient = new DiscordService();
-        private static readonly DarkSoulsProcessService _game = new DarkSoulsProcessService();
-
-        private static void Main(string[] args)
+        try
         {
-            InitRPC();
+            GamePresence currentPresence = game.GetCurrentPresence();
 
-            Thread updateThread = new Thread(UpdatePresenceLoop);
-            updateThread.IsBackground = true;
-            updateThread.Start();
-
-            for (; ; ) { }
-        }
-
-        private static void InitRPC()
-        {
-            _client.Initialize();
-            _client.Invoke();
-        }
-
-        private static void UpdatePresenceLoop()
-        {
-            while (true)
+            if (!currentPresence.Equals(lastPresence))
             {
-                string currentCovenantImage = _game.GetCovenantImage();
-                int currentSouls = _game.GetCurrentSouls();
-                string currentArea = _game.GetCurrentAreaName();
-                string currentCovenant = _game.GetCurrentCovenantName();
-                UpdateRPC(new GamePresence(currentArea, currentCovenant, currentCovenantImage, currentSouls));
-                Thread.Sleep(2000);
+                UpdateRPC(currentPresence);
+                lastPresence = currentPresence;
             }
         }
-
-        private static void UpdateRPC(GamePresence gamePresence)
+        catch (Exception ex)
         {
-            var presence = new RichPresence()
-            {
-                State = $"{gamePresence.SoulsQuantity} Souls",
-                Details = $"Exploring {gamePresence.AreaName}",
-                Assets = new Assets()
-                {
-                    LargeImageKey = gamePresence.CovenantImage,
-                    LargeImageText = $"This user has entered a covenant with the {gamePresence.Covenant}"
-                },
-            };
-
-            _client.SetPresence(presence);
+            Console.WriteLine($"RPC Error: {ex.Message}");
         }
 
+        await Task.Delay(2000);
     }
+}
 
+void UpdateRPC(GamePresence gamePresence)
+{
+    RichPresence presence = new RichPresence()
+    {
+        State = $"{gamePresence.SoulsQuantity} Souls",
+        Details = $"Exploring {gamePresence.AreaName}",
+        Assets = new Assets()
+        {
+            LargeImageKey = gamePresence.CovenantImage,
+            LargeImageText = gamePresence.Covenant,
+        },
+        StatusDisplay = StatusDisplayType.Name,
+        Type = ActivityType.Playing,
+    };
+
+    client.SetPresence(presence);
 }
