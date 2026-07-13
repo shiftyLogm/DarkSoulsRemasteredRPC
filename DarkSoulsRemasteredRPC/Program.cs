@@ -2,9 +2,9 @@
 using DarkSoulsRemasteredRPC.Models;
 using DiscordRPC;
 
-const string DISCORD_APP_ID = "1372757659811319870";
+const string DiscordAppId = "1372757659811319870";
 
-using DiscordRpcClient client = new DiscordRpcClient(DISCORD_APP_ID);
+using DiscordRpcClient client = new DiscordRpcClient(DiscordAppId);
 
 DarkSoulsService game = new DarkSoulsService();
 
@@ -30,7 +30,7 @@ async Task UpdatePresenceLoop()
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"RPC Error: {ex.Message}");
+            
         }
 
         await Task.Delay(2000);
